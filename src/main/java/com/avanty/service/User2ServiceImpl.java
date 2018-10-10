@@ -1,5 +1,6 @@
 package com.avanty.service;
 
+import com.avanty.dds.TargetDataSource;
 import com.avanty.mapper.User2Mapper;
 import com.avanty.pojo.User2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class User2ServiceImpl implements User2Mapper {
     User2Mapper user2Mapper;
 
     @Override
+    @TargetDataSource(value = "slave")
     public User2 find2ByName(String name) {
         return user2Mapper.find2ByName(name);
     }

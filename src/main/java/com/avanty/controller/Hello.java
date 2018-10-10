@@ -29,13 +29,11 @@ public class Hello {
     }
 
     @GetMapping("/user1")
-    @TargetDataSource(value = "master")
     public User1 user1Select(String name){
         return user1ServiceImpl.find1ByName(name);
     }
 
     @GetMapping("/user2")
-    @TargetDataSource(value = "slave")
     public User2 user2Select(String name){
         return user2ServiceImpl.find2ByName(name);
     }
